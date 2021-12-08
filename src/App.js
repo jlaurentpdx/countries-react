@@ -47,7 +47,10 @@ function App() {
       </select>
       {filterCountries().map((country) => (
         <div key={country.id}>
-          <img src={`https://flagcdn.com/16x12/${country.iso2.toLowerCase()}.png`} />
+          <img
+            src={`https://flagcdn.com/16x12/${country.iso2.toLowerCase()}.png`}
+            alt={'Flag of ' + country.name}
+          />
           <span>{' ' + country.name}</span>
         </div>
       ))}
