@@ -13,7 +13,6 @@ function App() {
       const data = await getCountries();
       setCountries(data);
       setLoading(false);
-      console.log(data);
     };
     fetchData();
   }, []);
@@ -22,7 +21,9 @@ function App() {
 
   function filterCountries() {
     return countries.filter((country) => {
-      country.name.includes(query) && (country.continent === continent || continent === 'All');
+      return (
+        country.name.includes(query) && (country.continent === continent || continent === 'All')
+      );
     });
   }
 
@@ -44,11 +45,11 @@ function App() {
         <option value="Oceania">Oceania</option>
         <option value="South America">South America</option>
       </select>
-      {countries.map((country) => (
-        <p key={country.id}>
+      {filterCountries().map((country) => (
+        <div key={country.id}>
           <img src={`https://flagcdn.com/16x12/${country.iso2.toLowerCase()}.png`} />
-          {country.name}
-        </p>
+          <span>{' ' + country.name}</span>
+        </div>
       ))}
     </div>
   );
