@@ -1,25 +1,22 @@
-# Alchemy React Base Template
+# Countries of the World
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## What is this app?
 
-Use this template for all your "from scratch" deliverables. To start, simply run
+This is a simple React app designed to display a list of countries from a database along with a series of inputs for sorting and navigating the database.
 
-- `npm install`
-- `npm start`
+## Why are you making this app?
 
-## Available Scripts
+I am designing this app to practice interactions between React and Supabase - along with my fellow students in Alchemy Code Lab's September 2021 cohort.
 
-In the project directory, you can run:
+## What are the requirements?
 
-### `npm start`
+This app needs to:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [x] Send requests to and retrieve data from a database using `Supabase.js`
+  - [x] Make a new file called `countries.js` to retrieve responses from Supabase
+  - [x] Set Supabase credentials in local development environment
+- [ ] In `App.js`:
+  - [x] Import and utilize `useEffect()` and `useState()` to manage database calls and update State for `countries`, `continents`, and a `query` search function
+  - [ ] Loop through `countries` to retrieve and display name, then flag
+  - [ ] Have a `query` function that uses `.filter()` array method to sort countries by name
+  - [ ] Provides a dropdown list of continents using `.filter()`
